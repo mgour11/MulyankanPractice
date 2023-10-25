@@ -5,9 +5,11 @@ const defaultData: ContentBlockProps = {
   rendering: { componentName: 'ContentBlock' },
   params: {},
   fields: {
-    text: {
-      value:
-        '<p>This is <em>richtext</em> content to show the <strong>simplest</strong> possible example of a implementaiton possible.</p>',
+    Title: {
+      value: 'Main Content Block',
+    },
+    Body: {
+      value: 'This is content block component',
     },
   },
 };
