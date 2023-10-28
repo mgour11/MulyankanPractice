@@ -14,7 +14,7 @@ import { ComponentRendering, RouteData, Field, ImageField, FileField, LinkField 
 // @ts-ignore Prevent noUnusedLocals from triggering an error, we import all core field types to minimize changing to code generation.
 import { ComponentProps } from '@/lib/component-props';
 
-export namespace Feature.Mulyankan.Practice.ContentBlock {
+export namespace Feature.Mulyankan.TaazaKhabar.ContentBlock {
     export type ContentBlock = {
         fields?: { 
             /**
@@ -34,7 +34,7 @@ export namespace Feature.Mulyankan.Practice.ContentBlock {
 
     }
 }
-export namespace Feature.Mulyankan.Practice.FeaturedNews {
+export namespace Feature.Mulyankan.TaazaKhabar.FeaturedNews {
     export type FeatureNews = {
         fields?: { 
             /**
@@ -54,7 +54,75 @@ export namespace Feature.Mulyankan.Practice.FeaturedNews {
 
     }
 }
-export namespace Feature.Mulyankan.Practice.Common {
+export namespace Feature.Mulyankan.TaazaKhabar.Navigations {
+    export type Footer = {
+        fields?: { 
+            /**
+            * Represents the categoryLinks field (c67fdef7-e1ac-4291-af12-aa14e0c6c3af).
+            */
+            categoryLinks: Field<string>;
+
+            /**
+            * Represents the categoryLinksLabel field (337493e6-28ee-418c-994f-1a8d3faf0932).
+            */
+            categoryLinksLabel: Field<string>;
+
+            /**
+            * Represents the quickLinks field (2160b095-a258-418c-b4f4-5573a3452827).
+            */
+            quickLinks: Field<string>;
+
+            /**
+            * Represents the quickLinkslabel field (5550c46e-b6c6-4bb7-8c8f-28b6450afd81).
+            */
+            quickLinkslabel: Field<string>;
+        }
+
+    }
+    export type FooterFolder = {
+        fields?: {         }
+
+    }
+    export type Header = {
+        fields?: { 
+            /**
+            * Represents the logo field (7a6976e4-4c9d-4b59-b301-77eaddb18bd7).
+            */
+            logo: ImageField;
+
+            /**
+            * Represents the navLinks field (c254e0b5-c3bd-493e-92b6-ded1d7ff5e39).
+            */
+            navLinks: ItemExt[];
+        }
+
+    }
+    export type HeaderFolder = {
+        fields?: {         }
+
+    }
+}
+export namespace Feature.Mulyankan.TaazaKhabar.Navigations.Common {
+    export type Link = {
+        fields?: { 
+            /**
+            * Represents the linkTitle field (c67fa2a8-f721-43f1-802e-f81e0d9ad1e2).
+            */
+            linkTitle: Field<string>;
+
+            /**
+            * Represents the url field (f9c25e3d-6b80-412f-8d34-5a25b23d29a1).
+            */
+            url: LinkField;
+        }
+
+    }
+    export type LinksFolder = {
+        fields?: {         }
+
+    }
+}
+export namespace Feature.Mulyankan.TaazaKhabar.Common {
     export type News = {
         fields?: { 
             /**
@@ -80,14 +148,20 @@ export namespace Feature.Mulyankan.Practice.Common {
 
     }
 }
-export namespace Feature.Mulyankan.Practice.Category {
+export namespace Feature.Mulyankan.TaazaKhabar.Category {
     export type NewsFolder = {
         fields?: {         }
 
     }
 }
-export namespace Feature.Mulyankan {
-    export type Test = {
+export namespace Feature.Mulyankan.TaazaKhabar.Common.Promo {
+    export type PromoFolder = {
+        fields?: {         }
+
+    }
+}
+export namespace Feature.Mulyankan.TaazaKhabar.Navigations.Common {
+    export type SocialLink = {
         fields?: {         }
 
     }
