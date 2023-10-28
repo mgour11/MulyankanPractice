@@ -4,7 +4,7 @@
     "includes": [
       {
         "name": "Feature-Mulyankan-Templates",
-        "path": "/sitecore/templates/Feature/Mulyankan"
+        "path": "/sitecore/templates/Feature/Mulyankan/Taaza-Khabar"
       }
     ]
   },
