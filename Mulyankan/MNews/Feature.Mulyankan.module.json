@@ -1,0 +1,17 @@
+{
+  "namespace": "Feature.Mulyankan",
+  "items": {
+    "includes": [
+      {
+        "name": "Feature-Mulyankan-Templates",
+        "path": "/sitecore/templates/Feature/Mulyankan"
+      }
+    ]
+  },
+  "leprechaun": {
+    "configuration": {
+      "@extends": "Mulyankan.Base",
+      "@name": "Feature.Mulyankan"
+    }
+  }
+}
