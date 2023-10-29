@@ -14,19 +14,57 @@ import { ComponentRendering, RouteData, Field, ImageField, FileField, LinkField 
 // @ts-ignore Prevent noUnusedLocals from triggering an error, we import all core field types to minimize changing to code generation.
 import { ComponentProps } from '@/lib/component-props';
 
-export namespace Feature.Mulyankan.TaazaKhabar.ContentBlock {
-    export type ContentBlock = {
+export namespace Feature.Mulyankan.TaazaKhabar.ContentType.Banner {
+    export type Banner = 
+        Feature.Mulyankan.TaazaKhabar.Common.Base.image & 
+        Feature.Mulyankan.TaazaKhabar.Common.Base.navigation & {
         fields?: { 
             /**
-            * Represents the Body field (047bc5fe-db4f-4891-b33a-6d6554a63596).
+            * Represents the title field (a7abf56e-2cdb-4ab8-badd-e17e0e958944).
             */
-            Body: Field<string>;
+            title: Field<string>;
+        }
+
+    }
+    export type BannerFolder = {
+        fields?: {         }
+
+    }
+}
+export namespace Feature.Mulyankan.TaazaKhabar.ContentType.Carousel {
+    export type Carousel = {
+        fields?: { 
+            /**
+            * Represents the feedbac field (04d9783f-993a-421d-b889-4356a8fbe136).
+            */
+            feedbac: Field<string>;
 
             /**
-            * Represents the Title field (118bfa92-5dc7-42bd-887d-fd3fabd8abbc).
+            * Represents the numberOfSlides field (b83c45bd-bb8e-4f94-bf6e-b7c26531f7d0).
             */
-            Title: Field<string>;
+            numberOfSlides: Field<number>;
+
+            /**
+            * Represents the slides field (dc51cad5-c8ad-4d01-85c2-511a0bd32ef1).
+            */
+            slides: ItemExt[];
+
+            /**
+            * Represents the title field (a654f3e0-2744-44dc-b380-4b887720c4fd).
+            */
+            title: Field<string>;
         }
+
+    }
+    export type CarouselFolder = {
+        fields?: {         }
+
+    }
+}
+export namespace Feature.Mulyankan.TaazaKhabar.ContentType.ContentBlock {
+    export type ContentBlock = 
+        Feature.Mulyankan.TaazaKhabar.Common.Base.content & {
+        fields?: {         }
 
     }
     export type ContentBlockFolder = {
@@ -34,18 +72,18 @@ export namespace Feature.Mulyankan.TaazaKhabar.ContentBlock {
 
     }
 }
-export namespace Feature.Mulyankan.TaazaKhabar.FeaturedNews {
+export namespace Feature.Mulyankan.TaazaKhabar.ContentType.FeaturedNews {
     export type FeatureNews = {
         fields?: { 
             /**
-            * Represents the FeaturedTitle field (841280ff-1919-4295-a447-9e1e0d555298).
+            * Represents the featuredTitle field (841280ff-1919-4295-a447-9e1e0d555298).
             */
-            FeaturedTitle: Field<string>;
+            featuredTitle: Field<string>;
 
             /**
-            * Represents the News field (4e794834-4091-4638-9a33-8eec4182e2a2).
+            * Represents the news field (4e794834-4091-4638-9a33-8eec4182e2a2).
             */
-            News: ItemExt[];
+            news: ItemExt[];
         }
 
     }
@@ -55,12 +93,13 @@ export namespace Feature.Mulyankan.TaazaKhabar.FeaturedNews {
     }
 }
 export namespace Feature.Mulyankan.TaazaKhabar.Navigations {
-    export type Footer = {
+    export type Footer = 
+        Feature.Mulyankan.TaazaKhabar.Common.Base.content & {
         fields?: { 
             /**
             * Represents the categoryLinks field (c67fdef7-e1ac-4291-af12-aa14e0c6c3af).
             */
-            categoryLinks: Field<string>;
+            categoryLinks: ItemExt[];
 
             /**
             * Represents the categoryLinksLabel field (337493e6-28ee-418c-994f-1a8d3faf0932).
@@ -68,9 +107,44 @@ export namespace Feature.Mulyankan.TaazaKhabar.Navigations {
             categoryLinksLabel: Field<string>;
 
             /**
+            * Represents the copyrightText field (f421e981-0daa-4125-9543-2cfe909a1fd5).
+            */
+            copyrightText: Field<string>;
+
+            /**
+            * Represents the emailLabel field (df6c1621-84b3-4189-a122-58bafce70548).
+            */
+            emailLabel: Field<string>;
+
+            /**
+            * Represents the emailValue field (fa2ccfca-684a-4dec-a0ca-84715a73da40).
+            */
+            emailValue: Field<string>;
+
+            /**
+            * Represents the footerLogo field (04724f39-2cac-4b0c-aa1d-00d9f0943487).
+            */
+            footerLogo: ImageField;
+
+            /**
+            * Represents the phoneLabel field (d7a420c4-217e-41fe-94bb-a66bc23c7f0c).
+            */
+            phoneLabel: Field<string>;
+
+            /**
+            * Represents the phoneValue field (5b591d51-7d70-47f1-8e91-0ee3c64c8e23).
+            */
+            phoneValue: Field<string>;
+
+            /**
+            * Represents the policyLinks field (8dc52c66-0d6a-4787-ac69-173857f75703).
+            */
+            policyLinks: ItemExt[];
+
+            /**
             * Represents the quickLinks field (2160b095-a258-418c-b4f4-5573a3452827).
             */
-            quickLinks: Field<string>;
+            quickLinks: ItemExt[];
 
             /**
             * Represents the quickLinkslabel field (5550c46e-b6c6-4bb7-8c8f-28b6450afd81).
@@ -92,6 +166,11 @@ export namespace Feature.Mulyankan.TaazaKhabar.Navigations {
             logoLink:LinkField;
 
             /**
+            * Represents the logoLink field (d0075737-cfe8-4004-9877-29a4db2da316).
+            */
+            logoLink: LinkField;
+
+            /**
             * Represents the navLinks field (c254e0b5-c3bd-493e-92b6-ded1d7ff5e39).
             */
             navLinks: ItemExt[];
@@ -103,8 +182,19 @@ export namespace Feature.Mulyankan.TaazaKhabar.Navigations {
 
     }
 }
+export namespace Feature.Mulyankan.TaazaKhabar.PageTypes.Landing {
+    export type LandingPage = {
+        fields?: { 
+            /**
+            * Represents the listingTitle field (6c6ec991-cb1c-44e9-bb47-473f43a4a883).
+            */
+            listingTitle: Field<string>;
+        }
+
+    }
+}
 export namespace Feature.Mulyankan.TaazaKhabar.Navigations.Common {
-    export type Link = {
+    export type Links = {
         fields?: { 
             /**
             * Represents the linkTitle field (c67fa2a8-f721-43f1-802e-f81e0d9ad1e2).
@@ -112,9 +202,9 @@ export namespace Feature.Mulyankan.TaazaKhabar.Navigations.Common {
             linkTitle: Field<string>;
 
             /**
-            * Represents the url field (f9c25e3d-6b80-412f-8d34-5a25b23d29a1).
+            * Represents the linkUrl field (f9c25e3d-6b80-412f-8d34-5a25b23d29a1).
             */
-            url: LinkField;
+            linkUrl: LinkField;
         }
 
     }
@@ -149,21 +239,166 @@ export namespace Feature.Mulyankan.TaazaKhabar.Common {
 
     }
 }
+export namespace Feature.Mulyankan.TaazaKhabar.PageTypes.NewsDetail {
+    export type NewsDetailPage = 
+        Feature.Mulyankan.TaazaKhabar.Common.Base.image & {
+        fields?: { 
+            /**
+            * Represents the authorName field (147c90ac-e37d-44bd-8750-4a89d95b2813).
+            */
+            authorName: Field<string>;
+
+            /**
+            * Represents the body field (0d7b6360-305a-487a-970e-39c109905eaf).
+            */
+            body: Field<string>;
+
+            /**
+            * Represents the createdAt field (86111eb5-8698-4670-ad5c-9bf1305d2d43).
+            */
+            createdAt: Field<string>;
+
+            /**
+            * Represents the readMoreLabel field (40b35499-da15-48ce-a3ea-510a048eb123).
+            */
+            readMoreLabel: Field<string>;
+
+            /**
+            * Represents the subtitle field (6d205d9e-196d-40f9-bd99-9763016f9f9d).
+            */
+            subtitle: Field<string>;
+
+            /**
+            * Represents the tags field (19c77fca-94f7-42cb-b133-39cc8751ed22).
+            */
+            tags: ItemExt[];
+
+            /**
+            * Represents the title field (b56ab711-a4d7-46d7-afd5-9e4362076d76).
+            */
+            title: Field<string>;
+        }
+
+    }
+}
 export namespace Feature.Mulyankan.TaazaKhabar.Category {
     export type NewsFolder = {
         fields?: {         }
 
     }
 }
-export namespace Feature.Mulyankan.TaazaKhabar.Common.Promo {
+export namespace Feature.Mulyankan.TaazaKhabar.Common.NewsTags {
+    export type NewsTagsFolder = {
+        fields?: {         }
+
+    }
+}
+export namespace Feature.Mulyankan.TaazaKhabar.ContentType.Promo {
+    export type Promo = 
+        Feature.Mulyankan.TaazaKhabar.Common.Base.content & 
+        Feature.Mulyankan.TaazaKhabar.Common.Base.image & 
+        Feature.Mulyankan.TaazaKhabar.Common.Base.navigation & {
+        fields?: {         }
+
+    }
     export type PromoFolder = {
         fields?: {         }
 
     }
 }
-export namespace Feature.Mulyankan.TaazaKhabar.Navigations.Common {
-    export type SocialLink = {
+export namespace Feature.Mulyankan.TaazaKhabar.ContentType.Tabs {
+    export type Tab = {
+        fields?: { 
+            /**
+            * Represents the tabData field (96d24da5-ac61-4fd7-93ef-95f18bc1fcf8).
+            */
+            tabData: Field<string>;
+
+            /**
+            * Represents the tabTitle field (738d7f87-bf04-4282-8d4f-1f14b62bef1a).
+            */
+            tabTitle: Field<string>;
+        }
+
+    }
+    export type TabListing = 
+        Feature.Mulyankan.TaazaKhabar.Common.Base.content & {
+        fields?: { 
+            /**
+            * Represents the tabsData field (76b60c18-fce7-4ed3-8b5e-b982cf2609f4).
+            */
+            tabsData: ItemExt[];
+        }
+
+    }
+}
+export namespace Feature.Mulyankan.TaazaKhabar.Common.NewsTags {
+    export type Tag = {
+        fields?: { 
+            /**
+            * Represents the value field (56688464-5209-4f0e-8e35-518c987bae2d).
+            */
+            value: Field<string>;
+        }
+
+    }
+}
+export namespace Feature.Mulyankan.TaazaKhabar.ContentType.Video {
+    export type Video = {
+        fields?: { 
+            /**
+            * Represents the videoTitle field (a0b972ed-3292-45ac-9603-2208ac41bc10).
+            */
+            videoTitle: Field<string>;
+
+            /**
+            * Represents the videoURL field (b02d9cd1-5cdb-4f25-a107-7d86f86236f7).
+            */
+            videoURL: Field<string>;
+        }
+
+    }
+    export type VideoFolder = {
         fields?: {         }
+
+    }
+}
+export namespace Feature.Mulyankan.TaazaKhabar.Common.Base {
+    export type content = {
+        fields?: { 
+            /**
+            * Represents the content field (cedc2fb7-cda2-4faa-a415-92fdb6220d2b).
+            */
+            content: Field<string>;
+
+            /**
+            * Represents the title field (a6718fd3-c8aa-4078-8081-50b0dd5c814d).
+            */
+            title: Field<string>;
+        }
+
+    }
+    export type image = {
+        fields?: { 
+            /**
+            * Represents the image field (558bf582-ef31-413c-a532-379b235eccfb).
+            */
+            image: ImageField;
+        }
+
+    }
+    export type navigation = {
+        fields?: { 
+            /**
+            * Represents the navigationLink field (4216c593-ebfc-496f-af95-bc29070c2a1b).
+            */
+            navigationLink: LinkField;
+
+            /**
+            * Represents the navigationTitle field (6a7e16da-5201-4bcc-b10d-ba6c12f2d9f7).
+            */
+            navigationTitle: Field<string>;
+        }
 
     }
 }
