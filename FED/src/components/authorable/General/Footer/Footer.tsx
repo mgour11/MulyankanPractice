@@ -14,7 +14,10 @@ const Footer = ({ fields }: FooterProps): JSX.Element => {
       <Grid variant="lg" sectionWrapperClasses="bg-gray-200 py-10">
         <div className="col-span-12 lg:col-span-6 text-center lg:text-left">
           <Text tag="h1" field={{ value: fields?.title?.value }} className="mb-5 font-bold" />
-          <RichText field={{ value: fields?.content.value }}></RichText>
+          <RichText
+            field={{ value: fields?.content.value }}
+            className="text-justify mx-4 md:mx-0"
+          ></RichText>
 
           <div className="flex items-center justify-center lg:justify-start">
             <Text
