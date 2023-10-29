@@ -5,10 +5,10 @@ const defaultData: ContentBlockProps = {
   rendering: { componentName: 'ContentBlock' },
   params: {},
   fields: {
-    Title: {
+    title: {
       value: 'Main Content Block',
     },
-    Body: {
+    body: {
       value: 'This is content block component',
     },
   },
