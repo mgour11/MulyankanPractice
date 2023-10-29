@@ -3,7 +3,7 @@ import { Grid } from '@/components/helpers/Grid/Grid';
 import { Field, RichTextField } from '@sitecore-jss/sitecore-jss-nextjs';
 
 // Local
-import RichTextA11yWrapper from 'components/helpers/RichTextA11yWrapper/RichTextA11yWrapper';
+// import RichTextA11yWrapper from 'components/helpers/RichTextA11yWrapper/RichTextA11yWrapper';
 
 // Ideally, all this is from generated Typescript code from Sitecore and we're not manually defining types.
 interface Fields {
