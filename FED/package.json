@@ -57,6 +57,7 @@
     "postcss-loader": "^7.3.0",
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
+    "react-icons": "^4.11.0",
     "style-loader": "^3.3.3"
   },
   "devDependencies": {

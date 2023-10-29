@@ -31,11 +31,11 @@ const nextConfig = {
     // prefixed path e.g. `/styleguide`.
     defaultLocale: packageConfig.language,
   },
-
+ 
   // Enable React Strict Mode
   reactStrictMode: true,
   images: {
-    domains: ['fastly.picsum.photos'],
+    domains: ['fastly.picsum.photos','sc103sc.dev.local'],  
   },
 
   async rewrites() {
@@ -64,3 +64,5 @@ module.exports = () => {
   // Run the base config through any configured plugins
   return Object.values(plugins).reduce((acc, plugin) => plugin(acc), nextConfig);
 };
+
+

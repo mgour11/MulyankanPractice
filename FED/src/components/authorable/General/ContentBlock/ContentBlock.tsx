@@ -7,8 +7,8 @@ import RichTextA11yWrapper from 'components/helpers/RichTextA11yWrapper/RichText
 
 // Ideally, all this is from generated Typescript code from Sitecore and we're not manually defining types.
 interface Fields {
-  Title: Field<string>;
-  Body: RichTextField;
+  title: Field<string>;
+  body: RichTextField;
 }
 
 export type ContentBlockProps = {
