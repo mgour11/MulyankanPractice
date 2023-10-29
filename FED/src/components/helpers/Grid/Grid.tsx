@@ -5,6 +5,7 @@ export type ComponentWrapperProps = {
   dataComponent?: string;
   variant: ComponentSizeVariants;
   backgroundVariant?: ComponentBackgroundVariants;
+  sectionWrapperClasses?: string;
   gap?: GapSizes;
   padding?: string;
 };
@@ -68,15 +69,16 @@ export const Grid = ({
   variant,
   backgroundVariant,
   dataComponent,
+  sectionWrapperClasses,
   gap,
   padding,
 }: ComponentWrapperProps): JSX.Element => {
   const gridClass = `section-grid grid grid-cols-2 md:grid-cols-12 ${padding || 'px-m'} ${
-    gap || 'gap-2 md:gap-5'
+    gap || 'gap-5'
   } ${dataComponent === 'product/productintro' ? 'relative' : ''}`;
 
   return (
-    <section className="mb-12" data-component={dataComponent}>
+    <section className={clsx('mb-12', sectionWrapperClasses)} data-component={dataComponent}>
       <div
         className={clsx(
           containerVariants[variant],

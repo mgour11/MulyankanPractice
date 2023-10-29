@@ -35,7 +35,7 @@ const newslisting = ({ fields }: NewsListingProps) => {
             <div className="col-span-12 md:col-span-4 gap-1 hover:translate-y-2" key={index}>
               <div className="border-2 p-4 rounded-lg h-full">
                 <div className="mb-6 relative h-[240px]">
-                  <NextImage field={newsItem?.image} alt={newsItem?.image.alt} fill />
+                  <NextImage field={newsItem?.image} alt={newsItem?.image?.alt} fill />
                 </div>
                 <div>
                   {newsItem?.tags?.tags.length > 0 &&

@@ -26,8 +26,11 @@ const Promo = ({ fields }: PromoProps): JSX.Element => {
             className="pb-6 font-normal text-xl text-gray-900"
           />
           <div>
-            <Link href={fields?.navigationLink} className="text-sky-500 hover:text-sky-600">
-              {fields?.navigationTitle}
+            <Link
+              href={fields?.navigationLink.value.href || '/'}
+              className="text-sky-500 hover:text-sky-600"
+            >
+              {fields?.navigationTitle?.value}
             </Link>
           </div>
         </div>

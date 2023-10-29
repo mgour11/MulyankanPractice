@@ -35,7 +35,7 @@ const nextConfig = {
   // Enable React Strict Mode
   reactStrictMode: true,
   images: {
-    domains: ['fastly.picsum.photos'],
+    domains: ['sc103sc.dev.local'],
   },
 
   async rewrites() {
