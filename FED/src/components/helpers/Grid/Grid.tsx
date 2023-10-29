@@ -56,8 +56,6 @@ export function hashCode(s: string) {
   return hash.toString();
 }
 
-type ComponentSpacing = 'standard' | 'reduced' | 'paddingStandard' | 'paddingReduced' | 'none';
-
 // const spacingValues: Record<ComponentSpacing, string> = {
 //   standard: 'my-8',
 //   reduced: 'my-4',
@@ -80,7 +78,7 @@ export const Grid = ({
   } ${dataComponent === 'product/productintro' ? 'relative' : ''}`;
 
   return (
-    <section className={sectionWrapperClasses} data-component={dataComponent}>
+    <section className={clsx('mb-12', sectionWrapperClasses)} data-component={dataComponent}>
       <div
         className={clsx(
           containerVariants[variant],
