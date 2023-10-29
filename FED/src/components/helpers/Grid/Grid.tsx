@@ -76,7 +76,7 @@ export const Grid = ({
   padding,
 }: ComponentWrapperProps): JSX.Element => {
   const gridClass = `section-grid grid grid-cols-2 md:grid-cols-12 ${padding || 'px-m'} ${
-    gap || 'gap-5'
+    gap || 'gap-2 md:gap-5'
   } ${dataComponent === 'product/productintro' ? 'relative' : ''}`;
 
   return (
