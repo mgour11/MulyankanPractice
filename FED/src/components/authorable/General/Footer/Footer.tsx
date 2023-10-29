@@ -11,7 +11,7 @@ type FooterProps = Feature.Mulyankan.TaazaKhabar.Navigations.Footer;
 const Footer = ({ fields }: FooterProps): JSX.Element => {
   return (
     <>
-      <Grid variant="lg" sectionWrapperClasses="bg-gray-200">
+      <Grid variant="lg" sectionWrapperClasses="bg-gray-200 py-10">
         <div className="col-span-12 lg:col-span-6 text-center lg:text-left">
           <Text tag="h1" field={{ value: fields?.title?.value }} className="mb-5 font-bold" />
           <RichText field={{ value: fields?.content.value }}></RichText>
