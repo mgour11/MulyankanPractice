@@ -9,5 +9,11 @@ module.exports = {
     }),
     require('@tailwindcss/typography'),
   ],
-  theme: {},
+  theme: {
+    extend: {
+      aspectRatio: {
+        '16/9': '16 / 9',
+      },
+    }
+  },
 };
