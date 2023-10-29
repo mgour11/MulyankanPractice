@@ -34,6 +34,9 @@ const nextConfig = {
  
   // Enable React Strict Mode
   reactStrictMode: true,
+  images: {
+    domains: ['fastly.picsum.photos','sc103sc.dev.local'],  
+  },
 
   async rewrites() {
     // When in connected mode we want to proxy Sitecore paths off to Sitecore
