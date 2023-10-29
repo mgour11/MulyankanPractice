@@ -22,8 +22,8 @@ const ContentBlock = ({ fields }: ContentBlockProps): JSX.Element => {
   if (fields === null || fields === undefined) return <></>;
   return (
     <Grid variant="lg">
-      <p className="font-bold">{fields.Title.value}</p>
-      <RichTextA11yWrapper data-testid="contentblock" field={fields.Body} editable />
+      {/* <p className="font-bold">{fields.Title.value}</p>
+      <RichTextA11yWrapper data-testid="contentblock" field={fields.Body} editable /> */}
     </Grid>
   );
 };
