@@ -8,7 +8,7 @@
  */
 
 // @ts-ignore Prevent noUnusedLocals from triggering an error, we import all core field types to minimize changing to code generation.
-import { ItemExt } from "lib/_.Sitecore.Override"
+import { ItemExt } from "./_.Sitecore.Override"
 // @ts-ignore Prevent noUnusedLocals from triggering an error, we import all core field types to minimize changing to code generation.
 import { ComponentRendering, RouteData, Field, ImageField, FileField, LinkField } from '@sitecore-jss/sitecore-jss-nextjs';
 // @ts-ignore Prevent noUnusedLocals from triggering an error, we import all core field types to minimize changing to code generation.
@@ -163,6 +163,7 @@ export namespace Feature.Mulyankan.TaazaKhabar.Navigations {
             * Represents the logo field (7a6976e4-4c9d-4b59-b301-77eaddb18bd7).
             */
             logo: ImageField;
+            logoLink:LinkField;
 
             /**
             * Represents the logoLink field (d0075737-cfe8-4004-9877-29a4db2da316).
