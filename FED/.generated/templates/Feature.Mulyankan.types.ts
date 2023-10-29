@@ -14,6 +14,53 @@ import { ComponentRendering, RouteData, Field, ImageField, FileField, LinkField 
 // @ts-ignore Prevent noUnusedLocals from triggering an error, we import all core field types to minimize changing to code generation.
 import { ComponentProps } from '@/lib/component-props';
 
+export namespace Feature.Mulyankan.TaazaKhabar.ContentType.Banner {
+    export type Banner = 
+        Feature.Mulyankan.TaazaKhabar.Common.Base.image & 
+        Feature.Mulyankan.TaazaKhabar.Common.Base.navigation & {
+        fields?: { 
+            /**
+            * Represents the title field (a7abf56e-2cdb-4ab8-badd-e17e0e958944).
+            */
+            title: Field<string>;
+        }
+
+    }
+    export type BannerFolder = {
+        fields?: {         }
+
+    }
+}
+export namespace Feature.Mulyankan.TaazaKhabar.ContentType.Carousel {
+    export type Carousel = {
+        fields?: { 
+            /**
+            * Represents the feedbac field (04d9783f-993a-421d-b889-4356a8fbe136).
+            */
+            feedbac: Field<string>;
+
+            /**
+            * Represents the numberOfSlides field (b83c45bd-bb8e-4f94-bf6e-b7c26531f7d0).
+            */
+            numberOfSlides: Field<number>;
+
+            /**
+            * Represents the slides field (dc51cad5-c8ad-4d01-85c2-511a0bd32ef1).
+            */
+            slides: ItemExt[];
+
+            /**
+            * Represents the title field (a654f3e0-2744-44dc-b380-4b887720c4fd).
+            */
+            title: Field<string>;
+        }
+
+    }
+    export type CarouselFolder = {
+        fields?: {         }
+
+    }
+}
 export namespace Feature.Mulyankan.TaazaKhabar.ContentType.ContentBlock {
     export type ContentBlock = 
         Feature.Mulyankan.TaazaKhabar.Common.Base.content & {
@@ -192,12 +239,13 @@ export namespace Feature.Mulyankan.TaazaKhabar.Common {
     }
 }
 export namespace Feature.Mulyankan.TaazaKhabar.PageTypes.NewsDetail {
-    export type NewsDetailPage = {
+    export type NewsDetailPage = 
+        Feature.Mulyankan.TaazaKhabar.Common.Base.image & {
         fields?: { 
             /**
-            * Represents the autherName field (147c90ac-e37d-44bd-8750-4a89d95b2813).
+            * Represents the authorName field (147c90ac-e37d-44bd-8750-4a89d95b2813).
             */
-            autherName: Field<string>;
+            authorName: Field<string>;
 
             /**
             * Represents the body field (0d7b6360-305a-487a-970e-39c109905eaf).
@@ -208,6 +256,11 @@ export namespace Feature.Mulyankan.TaazaKhabar.PageTypes.NewsDetail {
             * Represents the createdAt field (86111eb5-8698-4670-ad5c-9bf1305d2d43).
             */
             createdAt: Field<string>;
+
+            /**
+            * Represents the readMoreLabel field (40b35499-da15-48ce-a3ea-510a048eb123).
+            */
+            readMoreLabel: Field<string>;
 
             /**
             * Represents the subtitle field (6d205d9e-196d-40f9-bd99-9763016f9f9d).
@@ -242,12 +295,39 @@ export namespace Feature.Mulyankan.TaazaKhabar.Common.NewsTags {
 export namespace Feature.Mulyankan.TaazaKhabar.ContentType.Promo {
     export type Promo = 
         Feature.Mulyankan.TaazaKhabar.Common.Base.content & 
-        Feature.Mulyankan.TaazaKhabar.Common.Base.image & {
+        Feature.Mulyankan.TaazaKhabar.Common.Base.image & 
+        Feature.Mulyankan.TaazaKhabar.Common.Base.navigation & {
         fields?: {         }
 
     }
     export type PromoFolder = {
         fields?: {         }
+
+    }
+}
+export namespace Feature.Mulyankan.TaazaKhabar.ContentType.Tabs {
+    export type Tab = {
+        fields?: { 
+            /**
+            * Represents the tabData field (96d24da5-ac61-4fd7-93ef-95f18bc1fcf8).
+            */
+            tabData: Field<string>;
+
+            /**
+            * Represents the tabTitle field (738d7f87-bf04-4282-8d4f-1f14b62bef1a).
+            */
+            tabTitle: Field<string>;
+        }
+
+    }
+    export type TabListing = 
+        Feature.Mulyankan.TaazaKhabar.Common.Base.content & {
+        fields?: { 
+            /**
+            * Represents the tabsData field (76b60c18-fce7-4ed3-8b5e-b982cf2609f4).
+            */
+            tabsData: ItemExt[];
+        }
 
     }
 }
@@ -303,6 +383,20 @@ export namespace Feature.Mulyankan.TaazaKhabar.Common.Base {
             * Represents the image field (558bf582-ef31-413c-a532-379b235eccfb).
             */
             image: ImageField;
+        }
+
+    }
+    export type navigation = {
+        fields?: { 
+            /**
+            * Represents the navigationLink field (4216c593-ebfc-496f-af95-bc29070c2a1b).
+            */
+            navigationLink: LinkField;
+
+            /**
+            * Represents the navigationTitle field (6a7e16da-5201-4bcc-b10d-ba6c12f2d9f7).
+            */
+            navigationTitle: Field<string>;
         }
 
     }

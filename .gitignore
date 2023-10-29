@@ -12,4 +12,5 @@
 *.sicpackage
 
 Mulyankan/MNews/serialization
-FED/.env
+FED/next.config.js
+FED/next.config.js
