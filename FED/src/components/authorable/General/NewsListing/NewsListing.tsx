@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Grid } from '@/components/helpers/Grid/Grid';
-import Image from 'next/image';
 import Link from 'next/link';
 import { Feature } from '.generated/templates/Feature.Mulyankan.types';
 import { NextImage } from '@sitecore-jss/sitecore-jss-nextjs';
@@ -22,37 +21,25 @@ type NewsListingProps = {
 const newslisting = ({ fields }: NewsListingProps) => {
   const newsList = fields.data.item.children.fields;
   const [loadData, setLoadData] = useState(6);
-  const [loadLess, setLoadLessData] = useState(3);
 
   const HandleLoadData = () => {
     setLoadData(loadData + 3);
-  };
-
-  const HandleLoadLessData = () => {
-    setLoadLessData(loadLess - 3);
   };
 
   return (
     <Grid variant="lg">
       {/* CARD */}
       {newsList
-        .map((news, index) => {
+        .map((newsItem, index) => {
           return (
-            <div className="col-span-2 md:col-span-4 gap-1 hover:translate-y-2" key={index}>
+            <div className="col-span-12 md:col-span-4 gap-1 hover:translate-y-2" key={index}>
               <div className="border-2 p-4 rounded-lg h-full">
                 <div className="mb-6 relative h-[240px]">
-                  {/* <NextImage src="https://picsum.photos/seed/picsum/200/300"></NextImage> */}
-                  <Image
-                    src="https://fastly.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI"
-                    alt="news image"
-                    className="rounded-lg"
-                    fill
-                  />
-                  {/* <NextImage src={news.} */}
+                  <NextImage field={newsItem?.image} alt={newsItem?.image.alt} fill />
                 </div>
                 <div>
-                  {news?.tags?.tags.length > 0 &&
-                    news?.tags?.tags?.map((tag, index) => {
+                  {newsItem?.tags?.tags.length > 0 &&
+                    newsItem?.tags?.tags?.map((tag, index) => {
                       return (
                         <p
                           className="rounded-lg p-1 text-blue-400 font-serif text-sm bg-slate-100 inline-block mr-1"
@@ -62,27 +49,27 @@ const newslisting = ({ fields }: NewsListingProps) => {
                         </p>
                       );
                     })}
-                  <Link href={'#'}>
+                  <Link href={newsItem.url?.path}>
                     <p className="mt-4 font-bold text-lg md:text-xl hover:opacity-30">
                       {/* The Impact of Technology on the Workplace: How Technology is Changing */}
-                      {news?.subtitle?.value}
+                      {newsItem?.subtitle?.value}
                     </p>
                   </Link>
                 </div>
                 <div className="mt-3">
                   <p className="text-gray-400">
                     {/* August 20, 2022 */}
-                    {console.log(news)}
-                    {news?.createdAt?.FormattedData}
+                    {console.log(newsItem)}
+                    {newsItem?.createdAt?.FormattedData}
                   </p>
-                  <p>By {news?.authorname?.value}</p>
+                  <p>By {newsItem?.authorname?.value}</p>
                 </div>
               </div>
             </div>
           );
         })
         .slice(0, loadData)}
-      <div className="col-span-12 ml-auto mr-auto">
+      <div className="col-span-12 mx-auto">
         {newsList.length > 6 ? (
           <div className="text-center mt-5">
             <button
