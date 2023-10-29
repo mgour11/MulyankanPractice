@@ -49,16 +49,14 @@ const newslisting = ({ fields }: NewsListingProps) => {
                         </p>
                       );
                     })}
-                  <Link href={newsItem.url?.path}>
+                  <Link href={newsItem?.url?.path}>
                     <p className="mt-4 font-bold text-lg md:text-xl hover:opacity-30">
-                      {/* The Impact of Technology on the Workplace: How Technology is Changing */}
                       {newsItem?.subtitle?.value}
                     </p>
                   </Link>
                 </div>
                 <div className="mt-3">
                   <p className="text-gray-400">
-                    {/* August 20, 2022 */}
                     {console.log(newsItem)}
                     {newsItem?.createdAt?.FormattedData}
                   </p>
