@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Grid } from '@/components/helpers/Grid/Grid';
 import Link from 'next/link';
 import { Feature } from '.generated/templates/Feature.Mulyankan.types';
-import { NextImage } from '@sitecore-jss/sitecore-jss-nextjs';
+import { NextImage, Text } from '@sitecore-jss/sitecore-jss-nextjs';
 
 type Newstype = Feature.Mulyankan.TaazaKhabar.PageTypes.NewsDetail.NewsDetailPage['fields'];
 
@@ -26,6 +26,7 @@ const newslisting = ({ fields }: NewsListingProps) => {
     setLoadData(loadData + 3);
   };
 
+  console.log('text', newsList);
   return (
     <Grid variant="lg">
       {/* CARD */}
@@ -38,15 +39,14 @@ const newslisting = ({ fields }: NewsListingProps) => {
                   <NextImage field={newsItem?.image} alt={newsItem?.image?.alt} fill />
                 </div>
                 <div>
-                  {newsItem?.tags?.tags.length > 0 &&
+                  {newsItem?.tags?.tags?.length > 0 &&
                     newsItem?.tags?.tags?.map((tag, index) => {
                       return (
-                        <p
+                        <Text
                           className="rounded-lg p-1 text-blue-400 font-serif text-sm bg-slate-100 inline-block mr-1"
                           key={index}
-                        >
-                          {tag?.tag?.value}
-                        </p>
+                          field={tag?.tag?.value}
+                        ></Text>
                       );
                     })}
                   <Link href={newsItem?.url?.path}>
